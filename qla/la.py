@@ -211,7 +211,7 @@ def vec_vec_max_dist(v1: Vector, v2: Vector):
 
 
 @dyn_fun
-def distance(*_):
+def distance(*_) -> float:
     ...
 
 
