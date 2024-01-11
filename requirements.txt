@@ -1,2 +1,2 @@
 # dyn-dispatch version 0.3
-https://github.com/uv-python/modules/raw/main/modules/dyn_dispatch-0.3-py3-none-any.whl
+https://github.com/uv-python/modules/raw/main/modules/dyn_dispatch-0.4-py3-none-any.whl
