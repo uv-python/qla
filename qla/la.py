@@ -15,7 +15,7 @@ def is_zero(x: Elem):
 # Vector
 
 
-@dataclass(frozen=True)
+@dataclass
 class Vector:
     v: Array
 
