@@ -10,9 +10,6 @@ from .precision import is_zero
 class Vector:
     v: Array
 
-    def __init__(self, l: Array):
-        self.v = l
-
     @dyn_method
     def __mul__(self, *_) -> Vector:
         ...
@@ -49,6 +46,9 @@ def vec_scalar_mul(self, x: Elem) -> Vector:
     return Vector([x * e for e in self.v])
 
 
+@dyn_dispatch(Vector, "__mul__", Elem)
+def vec_scalar_mul(self, x: Elem) -> Vector:
+    return Vector([x * e for e in self.v])
 def distance(v1: Vector, v2: Vector):
     return (v1 - v2).abs()
 
