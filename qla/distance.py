@@ -1,6 +1,15 @@
-from .Matrix import Matrix, distance as __mm_distance, max_distance as __mm_max_distance
-from .Vector import Vector, distance as __vv_distance, max_distance as __vv_max_distance
+from .matrix import Matrix, distance as __mm_distance, max_distance as __mm_max_distance
+from .vector import Vector, distance as __vv_distance, max_distance as __vv_max_distance
 from dyn_dispatch import dyn_dispatch_f, dyn_fun
+
+
+"""Compute max distance between elements
+Args:
+    e1 (Vector | Matrix): Vector or Matrix instance
+    e2 (Vector | Matrix): Vector or Matrix instance
+Returns:
+    max distance between elements
+"""
 
 
 @dyn_fun

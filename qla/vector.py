@@ -2,7 +2,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from dyn_dispatch import dyn_dispatch, dyn_dispatch_f, dyn_method, dyn_fun
 import math
-from .types import Elem, Array, is_zero
+from .types import Elem, Array
 from .precision import is_zero
 
 
@@ -49,13 +49,18 @@ def vec_scalar_mul(self, x: Elem) -> Vector:
 @dyn_dispatch(Vector, "__mul__", Elem)
 def vec_scalar_mul(self, x: Elem) -> Vector:
     return Vector([x * e for e in self.v])
+
+
 def distance(v1: Vector, v2: Vector):
     return (v1 - v2).abs()
 
 
 def max_distance(v1: Vector, v2: Vector):
-    return max([abs(e1 - e2) for (e1, e2) in zip(v1, v2)])
+    return max([abs(e1 - e2) for (e1, e2) in zip(v1.v, v2.v)])
 
 
-def abs(v: Vector) -> float:
-    return v.abs()
+# def abs(v: Vector) -> float:
+#     if isinstance(v, Vector):
+#         return v.abs()
+#     else:
+#         return abs(v)

@@ -3,7 +3,7 @@ from dataclasses import dataclass
 
 # from dyn_dispatch import dyn_dispatch, dyn_dispatch_f, dyn_method, dyn_fun
 import math
-from .Vector import Vector
+from .vector import Vector
 from .types import Elem, Array, Array2D
 from .precision import is_zero
 
