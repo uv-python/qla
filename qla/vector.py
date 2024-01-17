@@ -2,7 +2,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from dyn_dispatch import dyn_dispatch, dyn_dispatch_f, dyn_method, dyn_fun
 import math
-from .types import Elem, Array
+from .types import Elem, Array, default
 from .precision import is_zero
 
 
@@ -40,10 +40,8 @@ class Vector:
     def abs(self) -> float:
         return math.sqrt(sum([x * x for x in self.v]))
 
-
-@dyn_dispatch(Vector, "__mul__", Elem)
-def vec_scalar_mul(self, x: Elem) -> Vector:
-    return Vector([x * e for e in self.v])
+    def new(size: int, t: type):
+        return Vector([default(t) for _ in range(size)])
 
 
 @dyn_dispatch(Vector, "__mul__", Elem)
