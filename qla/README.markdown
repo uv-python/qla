@@ -4,22 +4,11 @@ Minimal library intended to learn the linear algebra required to understand quan
 
 No dependency other than my multiple dispatch module. Slow, no numpy, Numba, Taichi...
 
-Build with *pip* (`pip3 install setuptools``)
+Build with
 ```bash
 pip3 wheel .
 ```
-or with *build* (`pip3 install build`)
-```bash
-python3 -m build
-```
-When building with *build* a `MANIFEST.in` file is required containing
-the name of the *README* and license file:
-```
-include README.markdown
-include LICENSE
-```
-
-To specify dependencies not found in the *pypi* repositories use the full git URL in `setup.py`:
+To specify dependencies not found in the pypi repositories use the full git URL in `setup.py`:
 
 ```python
 # setup.py
@@ -29,4 +18,3 @@ To specify dependencies not found in the *pypi* repositories use the full git UR
         "dyn-dispatch @ https://github.com/uv-python/modules/raw/main/modules/dyn_dispatch-0.4-py3-none-any.whl"],
     ...)
 ```
-

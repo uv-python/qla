@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 VERSION = "0.4.1"
 DESCRIPTION = "Minimal linear algebra library"
-with open("README.markdown", "r") as f:
+with open("./README.markdown", "r") as f:
     global LONG_DESCRIPTION
     LONG_DESCRIPTION = f.read()
 
@@ -16,8 +16,11 @@ setup(
     description=DESCRIPTION,
     long_description=LONG_DESCRIPTION,
     url="https://github.com/uv-python/qla",
-    packages=find_packages(),
-    install_requires=["dyn-dispatch"],
+    # packages=find_packages(),
+    install_requires=[
+        "dyn-dispatch @ " +
+        "https://github.com/uv-python/modules/raw/main" +
+        "/modules/dyn_dispatch-0.4-py3-none-any.whl"],
     license="BSD-3-Clause",
     keywords=["python", "math", "linear algebra", "quantum"],
 )
